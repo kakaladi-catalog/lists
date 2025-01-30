@@ -5,9 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="Description" content="Máy đánh bạc Điện Tử🎰，Bắn Cá，Game Bài，Sòng bạc trực tuyến, nền tảng chơi Game và giải trí đáng tin cậy nhất."/>
-		<link rel="icon" href="images/index/favicon.png">
+		<link rel="icon" href="images/index/favicon.ico">
 		<title>Hubet Trò chơi sòng bạc trực tuyến hay nhất, thương hiệu lâu đời mà bạn có thể tin tưởng.</title>
-		<link href="https://fonts.googleapis.com/css2?family=Khmer+OS&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"  crossorigin="anonymous">
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -18,13 +17,10 @@
 		<script src="js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
 	</head>
+
 	<body>
 		<div id="raindrop-container"></div>
-		<!-- Add the audio element for rain sound -->
-		<audio id="rain-sound" src="Audio/calming-rain.mp3" autoplay loop></audio>
-
-	</body>
-	<body>
+		<!-- existing content -->
 	<div id="app">
 		<div id="header">
 			<div class="hBox clearfix">
@@ -40,33 +36,22 @@
 				</div>
 			</div>
 		</div>
-		<!-- Login Button -->
-    <button id="show-login-button" onclick="showLoginForm()">Login</button>
-
-    <!-- Login Form (Initially Hidden) -->
-    <div id="login-form" style="display:none;">
-        <h2><span style="color: #fdd051;">Login</span></h2>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">Submit</button>
-    </div>
-
-    <!-- Product Form (Initially Hidden) -->
-    <div id="product-form" style="display:none;">
-        <h2><span style="color: black; font-size: 100%; line-height: 100%; text-align: center;">Add Product</h2>
-        <input type="text" id="product-image-url" placeholder="Enter Image URL">
-        <input type="text" id="product-price" placeholder="Price">
-        <input type="text" id="product-details" placeholder="Details">
-        <button onclick="addProduct()">Add Product</button>
-    </div>
-
-<!-- filepath: /D:/2 Website Code/Web Login/Login add pro/index.html -->
+		<div class="search-bar">
+			<input type="text" id="search-input" placeholder="Search products...">
+			<button id="search-button" onclick="searchProducts()">Search</button>
+		</div>
 <div id="container">
-	<div class="wrap clearfix">
-		<ul class="product-list" id="product-list">
-			<!-- Products will be dynamically added here -->
-		</ul>
-	</div>
+    <div class="wrap clearfix">
+        <ul class="product-list" id="product-list">
+			<li class="product-item" data-index="1">
+				<img src="images/index/dla1.png" alt="Product Image">
+				<span class="price">Price: Riel 1111111</span>
+				<span class="details">sfadfafa</span>
+				<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+			</li>
+            <!-- Products will be dynamically added here -->
+        </ul>
+    </div>
 </div>
 
 <div id="container2">
@@ -88,14 +73,142 @@
 				<img src="images/banner/1.jpg" class="carousel-image">
 			</div>
 		</div>
-		<marquee class="scrolling-text">
-			នេះគ្រាន់តែកាតាឡុករូបភាពនិងតំលៃតែប៉ុណ្ណោះ រាល់ការបញ្ជារទិញត្រូវតែទាក់ទងតាម លេខទូរស័ព្ទ ឬ <span class="highlight">Telegram</span> និង <span class="highlight">Facebook</span> របស់យើងតែប៉ុណ្ណោះ។
-		</marquee>
+	</div>
+	<marquee class="scrolling-text">
+		នេះគ្រាន់តែកាតាឡុករូបភាពនិងតំលៃតែប៉ុណ្ណោះ រាល់ការបញ្ជារទិញត្រូវតែទាក់ទងតាម លេខទូរស័ព្ទ ឬ <span class="highlight">Telegram</span> និង <span class="highlight">Facebook</span> របស់យើងតែប៉ុណ្ណោះ។
+	</marquee>
 	<div id="main">
 		<div class="wrap clearfix">
 			<div id="conts">
-				<h2><img src="images/index/KH.png" alt=""></h2>
+				<h2><img src="images/index/ttl01.png" alt=""></h2>
 				<ul class="product-list" id="product-list2">
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+										<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+										<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+										<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+										<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					<li class="product-item" data-index="1">
+						<img src="images/index/dla1.png" alt="Product Image">
+						<span class="price">Price: Riel 5555555</span>
+						<span class="details">打得过肉松蛋糕</span>
+						<a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+					</li>
+					
 					<!-- Products will be dynamically added here -->
 				</ul>
 			</div>
@@ -148,141 +261,10 @@
 			<div class="fBox">
 				<div class="fImg">
 				</div>
-				<p>Copyright © hubet Reserved</p>
+				<p>Copyright © តូបកាកា</p>
 			</div>
 		</div>
 	</div>
-
-		<script>
-			const app = Vue.createApp({
-				data() {
-					return {
-						tim: 0,
-						timeHanlde: null,
-						urls: [],
-						moburls: [],
-						connectTimeout: 'Timeout',
-						connectFail: 'Failed'
-					}
-				},
-				mounted() {
-					this.timeHanlde = setInterval(() => {
-						this.tim++
-					}, 100);
-					for (let i = 0; i < this.urls.length; i++) {
-						this.send(this.urls[i].url, i);
-					}
-					for (let j = 0; j < this.moburls.length; j++) {
-						this.send(this.moburls[j].url, j);
-					}
-
-					setTimeout(() => {
-						this.sortList(this.urls);
-						this.sortList(this.moburls);
-					}, 1000);
-				},
-				methods: {
-					refresh() {
-						this.tim = 0;
-						clearInterval(this.timeHanlde);
-						this.timeHanlde = setInterval(() => {
-							this.tim++
-						}, 100);
-						for (let i = 0; i < this.urls.length; i++) {
-							this.send(this.urls[i].url, i);
-						}
-						for (let j = 0; j < this.moburls.length; j++) {
-							this.send(this.moburls[j].url, j);
-						}
-						setTimeout(() => {
-							this.sortList(this.urls);
-							this.sortList(this.moburls);
-						}, 1000);
-					},
-					sortOrder(filed, type = 'asc') {
-						return (a, b) => {
-							if (type === 'asc') return a[filed] > b[filed] ? 1 : -1;
-							return a[filed] > b[filed] ? -1 : 1;
-						}
-					},
-					sortList() {
-						this.urls.sort(this.sortOrder('time', 'asc'));
-						this.moburls.sort(this.sortOrder('time', 'asc'));
-					},
-					send(url, index) {
-						const _this = this;
-						$.ajax({
-							type: 'get',
-							url: url,
-							dataType: 'jsonp',
-							timeout: 1000,
-							complete: function (res) {
-								console.log(res);
-								if (res.status == 200) {
-									if (_this.tim > 5000) {
-										_this.urls[index].second = _this.connectTimeout;
-										_this.moburls[index].second = _this.connectTimeout;
-									}
-									else {
-										_this.urls[index].second = _this.tim + 'ms';
-										_this.moburls[index].second = _this.tim + 'ms';
-									}
-									_this.urls[index].time = _this.tim;
-									_this.moburls[index].time = _this.tim;
-								}
-								else {
-									_this.urls[index].second = _this.connectFail;
-									_this.urls[index].time = 999999;
-									_this.moburls[index].second = _this.connectFail;
-									_this.moburls[index].time = 999999;
-								}
-							},
-						})
-					},
-					down() {
-						// Detect the browser and decide which link to trigger download
-						let targetUrl;
-						if (this.browserDetection() === 'PC') {
-							targetUrl = this.pcUrl;
-						} else if (this.browserDetection() === 'iphone' || this.browserDetection() === 'ipad') {
-							targetUrl = this.ios_step_1;
-							setTimeout(() => {
-								window.location.href = this.ios_step_2;
-							}, 2000);
-						} else {
-							targetUrl = this.apkAppUrl;
-						}
-
-						// Trigger download directly without opening a new page
-						const a = document.createElement('a');
-						a.href = targetUrl;
-						a.download = ''; // This forces the browser to attempt a download
-						document.body.appendChild(a);
-						a.click();
-						document.body.removeChild(a);
-					},
-					browserDetection() {
-						var userAgent = window.navigator.userAgent.toLowerCase();
-						var browser = null;
-						if (userAgent.match(/ipad/i)) {
-							browser = 'ipad';
-						} else if (userAgent.match(/iphone os/i)) {
-							browser = 'iphone';
-						} else if (userAgent.match(/midp/i)) {
-							browser = 'midp';
-						} else if (userAgent.match(/rv:1.2.3.4/i)) {
-							browser = 'rv:1.2.3.4';
-						} else if (userAgent.match(/ucweb/i)) {
-							browser = 'ucweb';
-						} else if (userAgent.match(/android/i)) {
-							browser = 'android';
-						}
-						return browser;
-					}
-				}
-			});
-			app.mount('#app');
-		</script>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	</body>
