@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(createSnowflake, 100);
   });
 
-  let isLoggedIn = false; // Track login status
+ let isLoggedIn = false; // Track login status
 
   // Function to show the login form
   function showLoginForm() {
