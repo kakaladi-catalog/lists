@@ -22,132 +22,124 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(createSnowflake, 100);
   });
 
-// filepath: /D:/2 Website Code/Web Login/Login add pro/js/vue.js
-let isLoggedIn = false; // Track login status
+  let isLoggedIn = false; // Track login status
 
-// Function to show the login form
-function showLoginForm() {
-    document.getElementById('show-login-button').style.display = 'none'; // Hide the login button
-    document.getElementById('login-form').style.display = 'block'; // Show the login form
-}
-
-// Function to handle login
-function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username === 'kaka' && password === '1415') {
-        isLoggedIn = true; // Set login status to true
-        document.getElementById('login-form').style.display = 'none'; // Hide the login form
-        document.getElementById('product-form').style.display = 'block'; // Show the product form
-        refreshProductList(); // Refresh the product list to show delete buttons
-    } else {
-        alert('Invalid username or password');
-    }
-}
-
-// Function to add a product
-function addProduct() {
-    const imageInput = document.getElementById('product-image');
-    const price = document.getElementById('product-price').value;
-    const details = document.getElementById('product-details').value;
-
-    if (imageInput.files.length > 0 && price && details) {
-        const imageFile = imageInput.files[0];
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            const product = { image: e.target.result, price, details };
-            saveProduct(product);
-            addProductToCatalog(product);
-            clearForm();
-        };
-
-        reader.readAsDataURL(imageFile);
-    } else {
-        alert('Please fill all fields');
-    }
-}
-
-// Function to save product to localStorage
-function saveProduct(product) {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    products.push(product);
-    localStorage.setItem('products', JSON.stringify(products));
-}
-
-// Function to add product to the catalog
-function addProductToCatalog(product, index) {
-    const productList = document.getElementById('product-list');
-    const productList2 = document.getElementById('product-list2');
-    const li = document.createElement('li');
-    li.className = 'product-item';
-    li.setAttribute('data-index', index); // Add data-index attribute for deletion
-
-    // Product details
-    li.innerHTML = `
-        <img src="${product.image}" alt="Product Image">
-        <span class="price">Price: Riel ${product.price}</span>
-        <span class="details">${product.details}</span>
-        <a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
-    `;
-
-    // Add delete button if logged in
-    if (isLoggedIn) {
-        const deleteButton = document.createElement('button');
-        deleteButton.innerText = 'Delete';
-        deleteButton.className = 'delete-button';
-        deleteButton.onclick = () => deleteProduct(index); // Attach delete function
-        li.appendChild(deleteButton);
-    }
-
-    productList.appendChild(li);
-
-    // Clone the product item and add to container2
-    const liClone = li.cloneNode(true);
-    if (isLoggedIn) {
-        const deleteButtonClone = liClone.querySelector('.delete-button');
-        deleteButtonClone.onclick = () => deleteProduct(index); // Attach delete function to clone
-    }
-    const buyButtonClone = liClone.querySelector('#buy_button');
-    buyButtonClone.href = "https://t.me/tinhnow_bot"; // Ensure the buy button link is correct
-    productList2.appendChild(liClone);
-}
-
-// Function to delete a product
-function deleteProduct(index) {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    products.splice(index, 1); // Remove the product at the specified index
-    localStorage.setItem('products', JSON.stringify(products)); // Update localStorage
-    refreshProductList(); // Refresh the product list
-}
-
-// Function to refresh the product list
-function refreshProductList() {
-    const productList = document.getElementById('product-list');
-    const productList2 = document.getElementById('product-list2');
-    productList.innerHTML = ''; // Clear the current list
-    productList2.innerHTML = ''; // Clear the current list in container2
-    loadProducts(); // Reload products from localStorage
-}
-
-// Function to clear the form after adding a product
-function clearForm() {
-    document.getElementById('product-image').value = '';
-    document.getElementById('product-price').value = '';
-    document.getElementById('product-details').value = '';
-}
-
-// Function to load products from localStorage
-function loadProducts() {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    products.forEach((product, index) => {
-        addProductToCatalog(product, index);
-    });
-}
-
-// Load products when the page loads
-window.onload = loadProducts;
+  // Function to show the login form
+  function showLoginForm() {
+      document.getElementById('show-login-button').style.display = 'none'; // Hide the login button
+      document.getElementById('login-form').style.display = 'block'; // Show the login form
+  }
+  
+  // Function to handle login
+  function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+  
+      if (username === 'kaka' && password === '1415') {
+          isLoggedIn = true; // Set login status to true
+          document.getElementById('login-form').style.display = 'none'; // Hide the login form
+          document.getElementById('product-form').style.display = 'block'; // Show the product form
+          refreshProductList(); // Refresh the product list to show delete buttons
+      } else {
+          alert('Invalid username or password');
+      }
+  }
+  
+  // Function to add a product
+  function addProduct() {
+      const imageUrl = document.getElementById('product-image-url').value;
+      const price = document.getElementById('product-price').value;
+      const details = document.getElementById('product-details').value;
+  
+      if (imageUrl && price && details) {
+          const product = { image: imageUrl, price, details };
+          saveProduct(product);
+          addProductToCatalog(product);
+          clearForm();
+      } else {
+          alert('Please fill all fields');
+      }
+  }
+  
+  // Function to save product to localStorage
+  function saveProduct(product) {
+      const products = JSON.parse(localStorage.getItem('products')) || [];
+      products.push(product);
+      localStorage.setItem('products', JSON.stringify(products));
+  }
+  
+  // Function to add product to the catalog
+  function addProductToCatalog(product, index) {
+      const productList = document.getElementById('product-list');
+      const productList2 = document.getElementById('product-list2');
+      const li = document.createElement('li');
+      li.className = 'product-item';
+      li.setAttribute('data-index', index); // Add data-index attribute for deletion
+  
+      // Product details
+      li.innerHTML = `
+          <img src="${product.image}" alt="Product Image">
+          <span class="price">Price: Riel ${product.price}</span>
+          <span class="details">${product.details}</span>
+          <a id="buy_button" target="_blank" href="https://t.me/tinhnow_bot">Buy Now</a>
+      `;
+  
+      // Add delete button if logged in
+      if (isLoggedIn) {
+          const deleteButton = document.createElement('button');
+          deleteButton.innerText = 'Delete';
+          deleteButton.className = 'delete-button';
+          deleteButton.onclick = () => deleteProduct(index); // Attach delete function
+          li.appendChild(deleteButton);
+      }
+  
+      productList.appendChild(li);
+  
+      // Clone the product item and add to container2
+      const liClone = li.cloneNode(true);
+      if (isLoggedIn) {
+          const deleteButtonClone = liClone.querySelector('.delete-button');
+          deleteButtonClone.onclick = () => deleteProduct(index); // Attach delete function to clone
+      }
+      const buyButtonClone = liClone.querySelector('#buy_button');
+      buyButtonClone.href = "https://t.me/tinhnow_bot"; // Ensure the buy button link is correct
+      productList2.appendChild(liClone);
+  }
+  
+  // Function to delete a product
+  function deleteProduct(index) {
+      const products = JSON.parse(localStorage.getItem('products')) || [];
+      products.splice(index, 1); // Remove the product at the specified index
+      localStorage.setItem('products', JSON.stringify(products)); // Update localStorage
+      refreshProductList(); // Refresh the product list
+  }
+  
+  // Function to refresh the product list
+  function refreshProductList() {
+      const productList = document.getElementById('product-list');
+      const productList2 = document.getElementById('product-list2');
+      productList.innerHTML = ''; // Clear the current list
+      productList2.innerHTML = ''; // Clear the current list in container2
+      loadProducts(); // Reload products from localStorage
+  }
+  
+  // Function to clear the form after adding a product
+  function clearForm() {
+      document.getElementById('product-image-url').value = '';
+      document.getElementById('product-price').value = '';
+      document.getElementById('product-details').value = '';
+  }
+  
+  // Function to load products from localStorage
+  function loadProducts() {
+      const products = JSON.parse(localStorage.getItem('products')) || [];
+      products.forEach((product, index) => {
+          addProductToCatalog(product, index);
+      });
+  }
+  
+  // Load products when the page loads
+  window.onload = loadProducts;
 
 	
 (function (global, factory) {
@@ -11967,7 +11959,7 @@ window.onload = loadProducts;
               else if (template.nodeType) {
                   template = template.innerHTML;
               }
-              else {
+              else {    
                   {
                       warn$2('invalid template option:' + template, this);
                   }
