@@ -3,6 +3,12 @@
  * (c) 2014-2022 Evan You
  * Released under the MIT License.
  */
+document.addEventListener('DOMContentLoaded', function() {
+    var productList2 = document.getElementById('product-list2');
+    var productListClone = productList2.cloneNode(true);
+    document.getElementById('product-list').appendChild(productListClone);
+});
+
 // ...existing code...
 function searchProducts() {
     const input = document.getElementById('search-input').value.toLowerCase();
