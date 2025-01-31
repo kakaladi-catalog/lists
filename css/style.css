@@ -3,16 +3,17 @@
 /* ...existing code... */
 .search-bar {
     margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
 #search-input {
     padding: 5px;
-    font-size: 16px;
+    font-size: 14px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-	width: 80%;
+	width: 75%;
 }
-
 #search-button {
     padding: 5px 10px;
     font-size: 16px;
@@ -20,6 +21,41 @@
 	background: #fdd051;
 	border: 1px solid #ccc;
 	border-radius: 5px;
+	justify-content: space-between;
+}
+#container .search-bar {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container .search-input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 75%;
+}
+
+/* Media query for smartphones */
+@media (max-width: 768px) {
+    #container .search-input {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    #container .search-bar {
+        flex-direction: column;
+    }
+}
+
+/* Media query for larger screens */
+@media (min-width: 769px) {
+    #container .search-input {
+        width: 50%;
+        font-size: 16px;
+    }
 }
 /* ...existing code... */
 
@@ -60,9 +96,6 @@
     }
 }
 
-
-
-
 /* filepath: /D:/2 Website Code/Web Login/Login add pro/css/style.css */
 .carousel-image {
     width: 100%;
@@ -97,9 +130,6 @@
     text-decoration: none;
   }
 
-    .delete-button:hover {
-        background-color: #cc0000;
-    }
 * {
 	margin: 0;
 	padding: 0;
@@ -139,7 +169,18 @@ body {
     border-radius: 5px; /* Rounded corners */
     padding: 10px; /* Padding inside items */
     margin: 10px; /* Margin between items */
-    width: calc(33.33% - 20px); /* Three columns with space for margin */
+    width: calc(50% - 20px); /* Two columns with space for margin */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text */
+	color: #fdd051;
+}
+#container .product-item {
+    background-color: #0d0000; /* Light background for items */
+    border: 1px solid #fdd051; /* Border around items */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside items */
+    margin: 10px; /* Margin between items */
+    width: calc(12.5% - 20px); /* Eight columns with space for margin */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     text-align: center; /* Center text */
 	color: #fdd051;
