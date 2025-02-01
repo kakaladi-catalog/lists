@@ -1,12 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* ...existing code... */
+.product-item .image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.product-item .new-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color:#ff5050;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
 .search-bar {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-	margin-top: 45px;
+	margin-top: 44px;
+
 }
 #search-input {
     padding: 5px;
